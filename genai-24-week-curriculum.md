@@ -8,7 +8,18 @@
 
 ---
 
-## What's new in v6 (two changes on top of v5)
+## What's new in this revision (compression + full course access)
+
+Four adjustments based on where you actually are:
+
+1. **micrograd + makemore-1 (bigram) compressed into Week 1.** You've done both; Week 1 is now a deliberate speed-run that redoes them from blank. The freed Builder time pulls makemore-2, activations/BatchNorm, and backprop-ninja *forward*, so you reach attention (V7), the tokenizer (V8), and nanochat about a week earlier — more slack in the back half.
+2. **Entire Prompt Engineering compressed into Week 1.** Also known material; the full CampusX course is re-run fast on Tuesday+Thursday of Week 1, freeing the User track to start Context Engineering (Vizuara) as early as Week 2.
+3. **Full CampusX paid access** — you now have the entire catalog, so every reference to a CampusX course (Prompt Engineering, Advanced RAG, LangChain, LangGraph, Docker for ML, etc.) is fully in scope with no "if you own it" hedging.
+4. **Vizuara YouTube membership** — you have all member-only content, so the Context Engineering Bootcamp's member lectures (and any other member playlists) are used directly; no need for the separate paid Engineer Plan unless you want the Colabs.
+
+Net effect on the calendar: the *structure* (6 cycles of 3+1, review weeks 4/8/12/16/20/24) is unchanged, but the Builder track runs ~1 week ahead from Cycle 2 onward. Don't compress anything you *haven't* already done — the speed-up is only justified for genuinely-known material.
+
+## What's new in v6 (two changes)
 
 1. **Newsletter → The Code** (https://codenewsletter.ai/), replacing AlphaSignal, per your preference. The Papers section explains how to use it well (it leans applied/tooling, so pair it with primary research reading so your paper muscle doesn't atrophy).
 2. **Tool track now builds two real Android apps you'll ship to Google Play** — a minimalist to-do list and a minimalist alarm clock with a lap button — instead of throwaway CLIs. Claude Code builds the to-do app (Month 1), Codex builds the alarm app (Month 2), Cursor polishes both and ships them to Play (Month 3). The *AI coding tools* section covers the modern Android stack (Kotlin + Jetpack Compose + Room/DataStore), why this doesn't violate your hand-coding principle, and how to frame the apps honestly in interviews.
@@ -82,8 +93,8 @@ Swap freely if the order doesn't fit your day — but **never skip deep-ml.**
 
 | Cycle | Weeks | Theme | Review week |
 |---|---|---|---|
-| 1 | 1–3 | Transformer foundations + Prompt engineering | Week 4 |
-| 2 | 5–7 | Attention/GPT internals + Context engineering | Week 8 |
+| 1 | 1–3 | Foundations speed-run (micrograd/makemore known) + Prompt engineering speed-run | Week 4 |
+| 2 | 5–7 | Backprop-ninja, attention, tokenizer + Context engineering (finish) | Week 8 |
 | 3 | 9–11 | nanochat full-stack build + RAG fundamentals | Week 12 |
 | 4 | 13–15 | Fine-tuning/RL (nanochat SFT+GRPO) + Advanced RAG | Week 16 |
 | 5 | 17–19 | Alignment & reasoning models + Agentic systems (LangGraph 1.0 + MCP) | Week 20 |
@@ -96,16 +107,16 @@ Review weeks (4, 8, 12, 16, 20, 24) are consolidation, not new learning: re-do t
 
 ## Resource priority (unchanged) with 2026 content map
 
-1. **CampusX** — YouTube (https://www.youtube.com/@campusx-official) + paid courses (https://learnwith.campusx.in/s/store). You own most of the catalog. Anchor courses:
+1. **CampusX** — YouTube (https://www.youtube.com/@campusx-official) + paid courses (https://learnwith.campusx.in/s/store). **You now have full paid-catalog access**, so every course below is directly usable. Anchor courses:
    - **Prompt Engineering** (paid) — prompt-eng gap
    - **Advanced RAG** (paid) — RAG-mastery cycle
    - **Agentic Coding using Claude Code** (paid/YouTube) — pairs with tool track
    - **Generative AI using LangChain** (YouTube) — check for v1.0-updated content; if the playlist predates Oct 2025, supplement with LangChain's own v1.0 docs
    - **Agentic AI using LangGraph** (YouTube) — same note re: v1.0
    - **Docker for Machine Learning** (paid) — deployment cycle
-2. **Vizuara** — YouTube (https://www.youtube.com/@vizuara) + pods (https://pods.vizuara.ai/). Membership planned, so member content is fair game.
+2. **Vizuara** — YouTube (https://www.youtube.com/@vizuara) + pods (https://pods.vizuara.ai/). **You now have the YouTube membership**, so all member-only content is directly in scope.
    - **Building LLMs from scratch** (free playlist) — Builder track companion
-   - **LLM Context Engineering Bootcamp** (free YouTube; paid tier https://context-engineering.vizuara.ai) — context-eng gap. Covers Foundations of Context, MCP, multi-agent context (AGENTS.md), RAG-as-context-engineering. Worth the paid tier for this one topic.
+   - **LLM Context Engineering Bootcamp** (member content covered by your YouTube membership) — context-eng gap. Covers Foundations of Context, MCP, multi-agent context (AGENTS.md), RAG-as-context-engineering. The separate paid Engineer Plan (context-engineering.vizuara.ai) is only worth it if you specifically want the downloadable Colabs/exercises; the lectures themselves are in your membership.
 3. **Karpathy** — Builder track anchor.
    - **nn-zero-to-hero** (https://github.com/karpathy/nn-zero-to-hero) — micrograd → GPT, weeks 1–9
    - **nanochat** (https://github.com/karpathy/nanochat) — full-stack ChatGPT clone, the Cycle 3–4 spine. Read the repo's README and walkthrough; there's a hosted demo at nanochat.karpathy.ai to see the endpoint.
@@ -120,9 +131,9 @@ Precedence when topics overlap: CampusX (you own it) → Vizuara → Karpathy fo
 
 | Cycle | Weeks | 🏗️ Builder | 🛠️ User | ⌨️ Coding tools | Weekend project (hand-coded) |
 |---|---|---|---|---|---|
-| 1 | 1–4 | Backprop, micrograd, makemore (Karpathy) | Prompt engineering (CampusX) | **Month 1: Claude Code → To-Do app** | Project A: micrograd + name generator |
-| 2 | 5–8 | Attention, GPT, tokenizer (Karpathy V7–8) | Context engineering (Vizuara) | Month 1 → Month 2 start | Project B: prompt+context library |
-| 3 | 9–12 | **nanochat** — tokenizer, pretraining, inference | RAG fundamentals (CampusX LangChain v1.0) | **Month 2: OpenAI Codex → Alarm app** | Project C: nanochat pretrained model |
+| 1 | 1–4 | **Speed-run** micrograd + makemore-1 (W1), then makemore-2, activations, backprop-ninja pulled forward | **Speed-run** Prompt engineering (W1), then Context engineering begins (Vizuara member) | **Month 1: Claude Code → To-Do app** | Project A: micrograd + name generator |
+| 2 | 5–8 | Finish backprop-ninja, WaveNet, **attention (V7), tokenizer (V8)**, open nanochat | Finish Context engineering (Vizuara member) | Month 1 → Month 2 start | Project B: prompt+context library |
+| 3 | 9–12 | **nanochat** — tokenizer, pretraining, inference (a week ahead) | RAG fundamentals (CampusX LangChain v1.0 — full paid access) | **Month 2: OpenAI Codex → Alarm app** | Project C: nanochat pretrained model |
 | 4 | 13–16 | **nanochat** — SFT, GRPO RL, eval, serving | Advanced RAG (CampusX paid) | Month 2 → Month 3 start | Project D: production RAG |
 | 5 | 17–20 | Alignment, RLHF, DPO, reasoning models | Agentic AI (LangGraph 1.0 + MCP) | **Month 3: Cursor → polish + ship both to Play** | Project E: agentic system w/ MCP |
 | 6 | 21–24 | Fine-tuning/PEFT, SLMs, frontier | GenAIOps, deployment, security | Month 3 wrap | Project F: EU AI Act compliance agent |
@@ -140,43 +151,44 @@ Column legend: **🏗️/🛠️** = Builder/User (1 hr) · **⌨️** = deep-ml
 
 ---
 
-## Cycle 1 — Weeks 1–4: Transformer foundations + Prompt engineering
+## Cycle 1 — Weeks 1–3 (compressed) + Review Week 4: Foundations speed-run + Prompt engineering
 
-> 🏗️ Builder: Karpathy nn-zero-to-hero V1–3 (micrograd, makemore part 1 & 2)
-> 🛠️ User: CampusX **Prompt Engineering** paid course, front to back
-> ⌨️ deep-ml: beginner — Linear Algebra (Mon/Wed), Machine Learning (Tue/Thu)
-> 🛠️⌨️ Tools: **Month 1 = Claude Code**
+> **You've done micrograd, makemore-1 (bigram), and all of Prompt Engineering before — so Cycle 1 is a deliberate speed-run of known material, and the time saved is reinvested by pulling later Builder content forward.** Net effect: you reach attention (Karpathy V7) and nanochat earlier, giving more slack in the back half.
+> 🏗️ Builder: Week 1 redoes micrograd + makemore-1 (bigram) fast; Weeks 2–3 pull makemore-2 (MLP), activations/BatchNorm, backprop-ninja forward from the old Cycle 2.
+> 🛠️ User: Week 1 redoes **all of CampusX Prompt Engineering** fast (you have full paid access now); Weeks 2–3 begin **Vizuara Context Engineering** early (full member access now — the member-only lectures are in scope).
+> ⌨️ deep-ml: beginner→intermediate — LA + ML (W1), add Deep Learning (W2–3)
+> 🛠️⌨️ Tools: **Month 1 = Claude Code → To-Do app**
 > 📰 Papers: 1 per weekend
 
-### Week 1
+### Week 1 — Speed-run week (redo known material)
 | Day | 🏗️/🛠️ (1 hr) | ⌨️ deep-ml (30) | 🛠️⌨️ Tools (30) | 📰 Papers (30) |
 |---|---|---|---|---|
-| Mon | 🏗️ Karpathy V1 *micrograd* — first half, code along | LA: dot product / matrix mul | Claude Code: read docs (https://docs.claude.com/en/docs/claude-code/overview); confirm install. **Set up the Android/Kotlin/Compose project** for the To-Do app in Android Studio | Subscribe to The Code (https://codenewsletter.ai/). Skim today's issue. Read abstract of *Attention Is All You Need* |
-| Tue | 🛠️ CampusX Prompt Eng — Modules 1–2 (foundations, prompt structure) | ML: linear regression closed form | Claude Code: plan-then-execute loop — have it explain the Compose project structure; read every generated file | The Code + Lilian Weng transformer post (lilianweng.github.io) |
-| Wed | 🏗️ Karpathy V1 — second half, finish micrograd | LA: transpose, eigenvalue intuition | Claude Code: build the task-list Composable; read *Permissions* docs; deny one action to feel the loop | The Code + skim one huggingface.co/papers item |
-| Thu | 🛠️ CampusX Prompt Eng — Modules 3–4 (few-shot, role, structured output) | ML: gradient descent by hand | Claude Code: create a `CLAUDE.md` with the app's conventions; build the add-task screen | The Code + finish the Weng piece |
-| Fri | **Review** (~1.5 hr): redo micrograd from blank in 60 min; re-read prompt notes; one-page summary | — | — | — |
+| Mon | 🏗️ **micrograd** — redo the whole thing from blank in one sitting (you've done it; this is the speed-run). Reference Karpathy V1 only if a spot is fuzzy. | LA: dot product / matrix mul | Claude Code: read docs (https://docs.claude.com/en/docs/claude-code/overview); confirm install. **Set up the Android/Kotlin/Compose project** for the To-Do app in Android Studio | Subscribe to The Code (https://codenewsletter.ai/). Skim today's issue. Read abstract of *Attention Is All You Need* |
+| Tue | 🛠️ **CampusX Prompt Eng — speed-run first half** (foundations, structure, few-shot, role, structured output). You've done it; move fast, take fresh notes only on what you'd forgotten. | ML: linear regression closed form | Claude Code: plan-then-execute loop — have it explain the Compose project structure; read every generated file | The Code + Lilian Weng transformer post (lilianweng.github.io) |
+| Wed | 🏗️ **makemore-1 (bigram)** — redo from blank. Reference Karpathy V2 only if needed. By end of today, micrograd + bigram are both re-consolidated. | LA: transpose, eigenvalue intuition | Claude Code: build the task-list Composable; read *Permissions* docs; deny one action to feel the loop | The Code + skim one huggingface.co/papers item |
+| Thu | 🛠️ **CampusX Prompt Eng — speed-run second half** (CoT, self-consistency, chaining, decomposition, evaluation, advanced patterns). Finish the course today. | ML: gradient descent by hand | Claude Code: create a `CLAUDE.md` with the app's conventions; build the add-task screen | The Code + finish the Weng piece |
+| Fri | **Review** (~1.5 hr): confirm micrograd + bigram both re-run from blank cleanly; consolidate your refreshed prompt-pattern library doc | — | — | — |
 | Sat | **Project A start** — fork micrograd from blank, add softmax + cross-entropy. Plain VS Code. | 📄 *Attention Is All You Need* — https://arxiv.org/abs/1706.03762 | 💼 LinkedIn Week 1: recover-or-restart decision + Profile Build Sections 1–4 | — |
 | Sun | Project A iteration + draft blog *"What backprop actually computes"* | — | 💼 LinkedIn: finish photo + banner + headline + About | — |
 
-### Week 2
+### Week 2 — makemore-2 (MLP) + Context engineering begins
 | Day | 🏗️/🛠️ (1 hr) | ⌨️ deep-ml (30) | 🛠️⌨️ Tools (30) | 📰 Papers (30) |
 |---|---|---|---|---|
-| Mon | 🏗️ Karpathy V2 *makemore part 1* (bigram) | LA: matrix-vector mul | Claude Code: planning session for the Room persistence layer — refine before it writes code | The Code + 1 abstract |
-| Tue | 🛠️ CampusX Prompt Eng — Modules 5–6 (chain-of-thought, self-consistency) | ML: logistic regression | Claude Code: implement Room storage (entity, DAO, database) for tasks | The Code |
-| Wed | 🏗️ Karpathy V3 *makemore part 2* (MLP) — first half | LA: norms, distances | Claude Code: wire ViewModel + StateFlow so the list reacts to storage | The Code + Karpathy's "Unreasonable Effectiveness of RNNs" (skim) |
-| Thu | 🛠️ CampusX Prompt Eng — Modules 7–8 (chaining, decomposition, eval) | ML: cosine similarity | Claude Code: custom slash commands for repeated Compose/Room boilerplate | The Code |
+| Mon | 🏗️ Karpathy V3 *makemore part 2* (MLP) — first half (new-ish territory, so normal pace resumes) | LA: matrix-vector mul | Claude Code: planning session for the Room persistence layer — refine before it writes code | The Code + 1 abstract |
+| Tue | 🛠️ Vizuara CE Bootcamp L1 *Foundations of Context* (full member access — do the member-only depth) | ML: logistic regression | Claude Code: implement Room storage (entity, DAO, database) for tasks | The Code |
+| Wed | 🏗️ Karpathy V3 *makemore part 2* (MLP) — second half; re-implement MLP from blank | LA: norms, distances | Claude Code: wire ViewModel + StateFlow so the list reacts to storage | The Code + Karpathy's "Unreasonable Effectiveness of RNNs" (skim) |
+| Thu | 🛠️ Vizuara CE Bootcamp L2 (context layers: Instructional/Knowledge/Tool) | ML: cosine similarity | Claude Code: custom slash commands for repeated Compose/Room boilerplate | The Code |
 | Fri | **Review** | — | — | — |
 | Sat | **Project A v2** — MLP name generator on your micrograd | 📄 *BERT* — https://arxiv.org/abs/1810.04805 | 💼 LinkedIn Week 2: Experience + Education + Skills + first 50 connections | — |
 | Sun | Project A v2 + perplexity comparison writeup | — | 💼 LinkedIn: 5 substantive comments | — |
 
-### Week 3
+### Week 3 — Activations/BatchNorm + backprop-ninja + Context engineering
 | Day | 🏗️/🛠️ (1 hr) | ⌨️ deep-ml (30) | 🛠️⌨️ Tools (30) | 📰 Papers (30) |
 |---|---|---|---|---|
-| Mon | 🏗️ Karpathy V3 — second half | LA: covariance / outer product | Claude Code: add edit + delete + complete-toggle for tasks | The Code + 1 abstract |
-| Tue | 🛠️ CampusX Prompt Eng — Modules 9–10 (advanced patterns, prompt library) | ML: softmax & cross-entropy by hand | Claude Code: have it write tests for the DAO/ViewModel — review each critically | The Code |
-| Wed | 🏗️ Re-implement bigram from blank (no video) | LA: eigendecomposition intuition | Claude Code: light MCP — connect one simple server (quick detour to see the feature) | The Code + skim huggingface.co/papers |
-| Thu | 🛠️ CampusX Prompt Eng — finish; build your personal prompt-pattern library doc | ML: precision / recall / F1 | Claude Code: minimalist UI polish; run the app on your own phone | The Code |
+| Mon | 🏗️ Karpathy V4 *makemore part 3* (activations & gradients, BatchNorm) — first half | DL: sigmoid forward+backward | Claude Code: add edit + delete + complete-toggle for tasks | The Code + 1 abstract |
+| Tue | 🛠️ Vizuara CE Bootcamp L3 (token budget, context-window optimization) | DL: ReLU + leaky variants | Claude Code: have it write tests for the DAO/ViewModel — review each critically | The Code |
+| Wed | 🏗️ Karpathy V4 — second half (BatchNorm forward+backward); then V5 *backprop ninja* — first half | DL: softmax forward+backward | Claude Code: light MCP — connect one simple server (quick detour to see the feature) | The Code + skim huggingface.co/papers |
+| Thu | 🛠️ Vizuara CE Bootcamp L4 *MCP intro* — connect this to the MCP you'll use in Cycle 5 | DL: BatchNorm by hand | Claude Code: minimalist UI polish; run the app on your own phone | The Code |
 | Fri | **Review** | — | — | — |
 | Sat | **Project A v3** — finalize micrograd + name generator README, push to GitHub | 📄 *GPT-2 technical report* (OpenAI cdn) | 💼 First LinkedIn post (*"Starting a 6-month deep dive into LLM internals…"*) | — |
 | Sun | Plan Project B (prompt+context library) | — | 💼 LinkedIn: 5 comments + 3 connection requests | — |
@@ -184,7 +196,7 @@ Column legend: **🏗️/🛠️** = Builder/User (1 hr) · **⌨️** = deep-ml
 ### Week 4 — REVIEW WEEK
 | Day | Block |
 |---|---|
-| Mon | Re-watch hardest Karpathy segment (manual backprop). Redo micrograd extensions from blank. |
+| Mon | Re-do the backprop-ninja gradient derivations from blank (this is the hardest Builder material so far). |
 | Tue | Re-do the hardest deep-ml problem from each of the last 3 weeks (4 problems × 20 min). |
 | Wed | Write long-form note: *"How prompt engineering actually works — what I'd tell a junior engineer."* 1000 words. |
 | Thu | Publish + cross-post to LinkedIn. **Claude Code Month 1 wrap:** 300-word reflection note. |
@@ -194,55 +206,56 @@ Column legend: **🏗️/🛠️** = Builder/User (1 hr) · **⌨️** = deep-ml
 
 ---
 
-## Cycle 2 — Weeks 5–8: Attention & GPT internals + Context engineering
+## Cycle 2 — Weeks 5–7 + Review Week 8: Attention, tokenizer, nanochat setup + Context engineering
 
-> 🏗️ Builder: Karpathy V4–5 (activations/BatchNorm, backprop ninja), then V7 *Let's build GPT* and V8 *Tokenizer* begin. (This front-loads attention so nanochat in Cycle 3 lands on solid ground.)
-> 🛠️ User: **Vizuara LLM Context Engineering Bootcamp** — Lecture 1 *Foundations of Context* onward; MCP, AGENTS.md, RAG-as-context. Consider the paid Engineer Plan for the Colabs.
-> ⌨️ deep-ml: beginner→intermediate — LA + Deep Learning (Mon/Wed), ML (Tue/Thu)
-> 🛠️⌨️ Tools: Claude Code wrap = ship the To-Do app to your phone (W5), begin **Month 2 — OpenAI Codex → Alarm clock app** (W6+)
+> **Because Cycle 1 pulled V4/V5 forward, Cycle 2 Builder starts higher up the stack — finishing backprop-ninja, then attention (V7) and the tokenizer (V8), and *beginning nanochat setup a week early*.** This is the payoff from the Week-1 speed-run.
+> 🏗️ Builder: finish V5 *backprop ninja*, V6 *WaveNet* (light), V7 *Let's build GPT* (attention), V8 *Tokenizer*, then open the nanochat repo.
+> 🛠️ User: continue **Vizuara Context Engineering** (member-only lectures included) through the advanced material — you started it in Week 2, so you finish the bootcamp here.
+> ⌨️ deep-ml: intermediate — Deep Learning (attention/tokenizer), NLP
+> 🛠️⌨️ Tools: Claude Code wrap = ship the To-Do app (W5), begin **Month 2 — OpenAI Codex → Alarm clock app** (W6+)
 > 📰 Papers: 1 per weekend
 
-### Week 5
+### Week 5 — finish backprop-ninja + WaveNet + To-Do app ships
 | Day | 🏗️/🛠️ (1 hr) | ⌨️ deep-ml (30) | 🛠️⌨️ Tools (30) | 📰 Papers (30) |
 |---|---|---|---|---|
-| Mon | 🏗️ Karpathy V4 *makemore part 3* (activations & gradients) — first half | DL: sigmoid forward+backward | Claude Code W5 (project week): finish the To-Do app — make it genuinely usable on your phone, fix real bugs | The Code + 1 abstract |
-| Tue | 🛠️ Vizuara CE Bootcamp L1 *Foundations of Context* | DL: ReLU + leaky variants | Claude Code: reflection note (interaction/strengths/weaknesses/fit) | The Code |
-| Wed | 🏗️ Karpathy V4 — second half (BatchNorm forward+backward) | DL: softmax forward+backward | To-Do app: ship v1 to your phone. **Prep Codex:** read https://developers.openai.com/codex (ChatGPT Plus $20/mo covers CLI) | The Code |
-| Thu | 🛠️ Vizuara CE Bootcamp L2 (context layers: Instructional/Knowledge/Tool) | DL: BatchNorm by hand | Codex: install; hello-world; **scaffold the Alarm clock Android project** | The Code |
+| Mon | 🏗️ Karpathy V5 *backprop ninja* — second half; derive 3 gradients yourself before checking | DL: chain rule on 2-layer MLP | Claude Code W5 (project week): finish the To-Do app — make it genuinely usable on your phone, fix real bugs | The Code + 1 abstract |
+| Tue | 🛠️ Vizuara CE Bootcamp L5 *Multi-agent context, AGENTS.md* (member content) | DL: layer norm by hand | Claude Code: To-Do reflection note (interaction/strengths/weaknesses/fit) | The Code |
+| Wed | 🏗️ Karpathy V6 *WaveNet* (lighter watch — dilated convolutions intuition) | DL: dropout intuition | To-Do app: ship v1 to your phone. **Prep Codex:** read https://developers.openai.com/codex (ChatGPT Plus $20/mo covers CLI) | The Code + skim HF Papers |
+| Thu | 🛠️ Vizuara CE Bootcamp L6 (advanced context management; member content) | DL: weight init schemes | Codex: install; hello-world; **scaffold the Alarm clock Android project** | The Code |
 | Fri | **Review** | — | — | — |
 | Sat | **Project B start** — prompt+context library: composable prompt-pattern functions with context-window awareness | 📄 *Sentence-BERT* — https://arxiv.org/abs/1908.10084 | 💼 LinkedIn: second post (paper-takeaway format) | — |
 | Sun | Project B + tests | — | 💼 LinkedIn engagement | — |
 
-### Week 6
+### Week 6 — Attention (V7)
 | Day | 🏗️/🛠️ (1 hr) | ⌨️ deep-ml (30) | 🛠️⌨️ Tools (30) | 📰 Papers (30) |
 |---|---|---|---|---|
-| Mon | 🏗️ Karpathy V5 *backprop ninja* — first half | DL: chain rule on 2-layer MLP | **Codex M2 W1**: ghost-text mechanics (CLI vs IDE vs Cloud); build the alarm data model + DataStore | The Code + 1 abstract |
-| Tue | 🛠️ Vizuara CE Bootcamp L3 (token budget, context-window optimization) | DL: layer norm by hand | Codex: build the set-alarm UI; reject/cycle suggestions, spot confident-wrong | The Code |
-| Wed | 🏗️ Karpathy V5 — second half (derive 3 gradients yourself) | DL: dropout intuition | Codex: `AlarmManager` scheduling + exact-alarm permission model; use /explain on the generated code | The Code + skim HF Papers |
-| Thu | 🛠️ Vizuara CE Bootcamp L4 *MCP intro* — connect this to the MCP you'll use in Cycle 5 | DL: weight init schemes | Codex: the ringing screen (full-screen intent / notification); configure auth, read pricing | The Code |
+| Mon | 🏗️ Karpathy V7 *Let's build GPT* — first third (single-head attention) | DL: scaled dot-product attention by hand | **Codex M2 W1**: ghost-text mechanics (CLI vs IDE vs Cloud); build the alarm data model + DataStore | The Code + 1 abstract |
+| Tue | 🛠️ Vizuara CE Bootcamp L7 (RAG-as-context-engineering; member content) | DL: attention mask basics | Codex: build the set-alarm UI; reject/cycle suggestions, spot confident-wrong | The Code |
+| Wed | 🏗️ Karpathy V7 — second third (multi-head, residual, layernorm) | DL: multi-head split+concat | Codex: `AlarmManager` scheduling + exact-alarm permission model; use /explain on the generated code | The Code + skim HF Papers |
+| Thu | 🛠️ Vizuara CE Bootcamp L8 (context for tool-use / agents; member content) | DL: positional encoding (sinusoidal) | Codex: the ringing screen (full-screen intent / notification); configure auth, read pricing | The Code |
 | Fri | **Review** | — | — | — |
 | Sat | **Project B v2** — add context-budget guards + auto-chunk-for-budget | 📄 *RAG (original)* — https://arxiv.org/abs/2005.11401 | 💼 LinkedIn: Build Log on Project A (micrograd) | — |
 | Sun | Project B + README | — | 💼 LinkedIn engagement | — |
 
-### Week 7
+### Week 7 — Attention finish + Tokenizer (V8) + open nanochat
 | Day | 🏗️/🛠️ (1 hr) | ⌨️ deep-ml (30) | 🛠️⌨️ Tools (30) | 📰 Papers (30) |
 |---|---|---|---|---|
-| Mon | 🏗️ Karpathy V7 *Let's build GPT* — first third (single-head attention) | DL: scaled dot-product attention by hand | **Codex W2**: the lap/stopwatch feature — start/stop/lap and the lap list (real state practice) | The Code + 1 abstract |
-| Tue | 🛠️ Vizuara CE Bootcamp L5 *Multi-agent context, AGENTS.md* | DL: attention mask basics | Codex: foreground service so the alarm survives the app backgrounding | The Code |
-| Wed | 🏗️ Karpathy V7 — second third (multi-head, residual, layernorm) | DL: multi-head split+concat | Codex: try Cloud mode for a contained task (e.g. a settings screen) | The Code + skim HF Papers |
-| Thu | 🛠️ Vizuara CE Bootcamp L6+ (continue playlist) | DL: positional encoding (sinusoidal) | Codex: reboot persistence (reschedule alarms after device restart) | The Code |
+| Mon | 🏗️ Karpathy V7 — final third (training loop, scaling intuition); re-implement the attention block from blank | DL: causal mask | **Codex W2**: the lap/stopwatch feature — start/stop/lap and the lap list (real state practice) | The Code + 1 abstract |
+| Tue | 🛠️ Vizuara CE Bootcamp — finish the bootcamp; write your context-engineering summary doc | DL: attention scaling (√d) | Codex: foreground service so the alarm survives the app backgrounding | The Code |
+| Wed | 🏗️ Karpathy V8 *Tokenizer* — first half (BPE) | DL: BPE by hand | Codex: try Cloud mode for a contained task (e.g. a settings screen) | The Code + skim HF Papers |
+| Thu | 🛠️ RAG warm-up — read the LangChain v1.0 intro docs (langchain.com) to prep Cycle 3; you have full CampusX access for the deep version | DL: multi-head attention impl | Codex: reboot persistence (reschedule alarms after device restart) | The Code |
 | Fri | **Review** | — | — | — |
 | Sat | **Project B v3** — package, README, push. This is a portfolio repo. | 📄 *Dense Passage Retrieval* — https://arxiv.org/abs/2004.04906 | 💼 LinkedIn: 10 comments + 3 connections | — |
-| Sun | Project B finalize + sketch Project C (nanochat) plan | — | 💼 LinkedIn engagement | — |
+| Sun | Project B finalize + **open the nanochat repo, read its README end-to-end** (Project C prep) | — | 💼 LinkedIn engagement | — |
 
 ### Week 8 — REVIEW WEEK
 | Day | Block |
 |---|---|
-| Mon | Re-watch Karpathy BatchNorm + manual backprop + V7 attention block. Redo the attention block from blank. |
+| Mon | Re-watch V7 attention block + finish V8 tokenizer (BPE deeply). Redo the attention block from blank. |
 | Tue | Re-do 4 hardest deep-ml problems from cycle 2. |
 | Wed | Write long-form note: *"Context engineering vs prompt engineering — the actual difference."* 1000 words. |
 | Thu | Publish + cross-post. **Codex check-in:** 1 hr on the Alarm app — reliability pass. |
-| Fri | Audit Project B; tracker. **Read the nanochat README end-to-end** to prep Cycle 3. |
+| Fri | Audit Project B; tracker. **Read the nanochat tokenizer + pretraining code** to prep Cycle 3 (you're a week ahead here — use it). |
 | Sat | 📄 *HyDE* — https://arxiv.org/abs/2212.10496. 💼 LinkedIn: post your context-eng note. |
 | Sun | Rest. |
 
@@ -250,7 +263,7 @@ Column legend: **🏗️/🛠️** = Builder/User (1 hr) · **⌨️** = deep-ml
 
 ## Cycle 3 — Weeks 9–12: nanochat (build) + RAG fundamentals
 
-> 🏗️ Builder: Karpathy V8 *Tokenizer* finish, then **nanochat**: understand the pipeline, run tokenizer training + pretraining, KV-cache inference. You are building a real ChatGPT-clone spine. (Full training runs cost GPU money — see the note below; you can study + run the small stages locally/cheaply and rent an 8×H100 node only if/when you want the full speedrun.)
+> 🏗️ Builder: **nanochat** in earnest — you finished the tokenizer video (V8) and opened the repo in Cycle 2, so dive straight into running tokenizer training + pretraining, and KV-cache inference. You are building a real ChatGPT-clone spine. (Full training runs cost GPU money — see the note below; you can study + run the small stages locally/cheaply and rent an 8×H100 node only if/when you want the full speedrun.)
 > 🛠️ User: **CampusX Generative AI using LangChain** + LangChain **v1.0 docs** (langchain.com) — build a naive→hybrid RAG pipeline
 > ⌨️ deep-ml: intermediate — Deep Learning (attention/tokenizer/KV-cache), NLP
 > 🛠️⌨️ Tools: continue **Codex → Alarm app** (working alarm+lap on your phone by ~W10)
@@ -261,9 +274,9 @@ Column legend: **🏗️/🛠️** = Builder/User (1 hr) · **⌨️** = deep-ml
 ### Week 9
 | Day | 🏗️/🛠️ (1 hr) | ⌨️ deep-ml (30) | 🛠️⌨️ Tools (30) | 📰 Papers (30) |
 |---|---|---|---|---|
-| Mon | 🏗️ Karpathy V8 *Tokenizer* — first half | DL: BPE by hand | **Codex W3**: handle Do Not Disturb + edge cases; make the alarm actually reliable | The Code + 1 abstract |
+| Mon | 🏗️ nanochat: run tokenizer training on a small corpus; understand how the Rust tokenizer maps to what you learned in V8 | DL: BPE by hand | **Codex W3**: handle Do Not Disturb + edge cases; make the alarm actually reliable | The Code + 1 abstract |
 | Tue | 🛠️ CampusX LangChain v1.0 — intro, models, prompts, LCEL | NLP: token frequencies | Codex: /tests for the alarm scheduling logic — review critically | The Code |
-| Wed | 🏗️ Karpathy V8 — second half (BPE deeply). Then open nanochat repo, read the tokenizer (Rust) module | DL: multi-head attention impl | Codex: agentic pass to clean up the alarm codebase | The Code + HF Papers |
+| Wed | 🏗️ nanochat: pretraining loop — read it end to end; understand the FineWeb data path and the Transformer config | DL: multi-head attention impl | Codex: agentic pass to clean up the alarm codebase | The Code + HF Papers |
 | Thu | 🛠️ CampusX LangChain — chains, output parsers, structured output | NLP: BM25 basics | Codex: draft reflection note (Android was unfamiliar — note where Codex misled you) | The Code |
 | Fri | **Review** | — | — | — |
 | Sat | **Project C start (nanochat)** — clone repo, run tokenizer training on a small corpus, read the pretraining loop | 📄 *Llama 3 paper* — https://arxiv.org/abs/2407.21783 | 💼 LinkedIn: Build Log on Project B | — |
